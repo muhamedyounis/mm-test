@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22">
+  <g id="vuesax_linear_mobile" data-name="vuesax/linear/mobile" transform="translate(-3 -1)">
+    <g id="mobile">
+      <path id="Vector" d="M16,5V15c0,4-1,5-5,5H5c-4,0-5-1-5-5V5C0,1,1,0,5,0h6C15,0,16,1,16,5Z" transform="translate(4 2)" fill="none" stroke="#4dc1e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-2" data-name="Vector" d="M4,0H0" transform="translate(10 5.5)" fill="none" stroke="#4dc1e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <path id="Vector-3" data-name="Vector" d="M3.1,1.55A1.55,1.55,0,1,1,1.55,0,1.55,1.55,0,0,1,3.1,1.55Z" transform="translate(10.45 16)" fill="none" stroke="#4dc1e0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

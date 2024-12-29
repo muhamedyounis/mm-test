@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Register Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&family=Open+Sans:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap");
+      select {
+        -webkit-appearance: none; /* Only for custom select fields */
+        appearance: none;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: url("pics/background.svg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+      }
+      .bold-grey {
+        font-weight: bold;
+        color: grey;
+        font-style: italic;
+      }
+
+      .signup {
+        color: #0494c9;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: normal;
+        font-size: 15pt;
+        text-align: left;
+        line-height: 170%;
+        font-style: italic;
+        text-decoration: none;
+      }
+
+      .logo {
+        display: block;
+        margin-bottom: 40px;
+        max-width: 100%;
+        margin-top: 20%;
+      }
+
+      .register-container {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(37, 116, 187, 0.21);
+        text-align: center;
+        width: 80%;
+        position: relative;
+        border: 1px solid #ffffff;
+      }
+
+      .login-title {
+        font-family: "Ubuntu", sans-serif;
+        color: #004a97;
+        font-size: 28pt;
+        margin: 0;
+        text-align: left;
+        line-height: 1;
+        width: 100%;
+      }
+      .erased-link {
+        color: grey; /* Change the text color to grey */
+        text-decoration: none; /* Remove the underline */
+        opacity: 0.5; /* Make it partially transparent to give an erased effect */
+        font-style: italic;
+        font-weight: bold; /* Make MedMark bold */
+        margin-top: 20%;
+      }
+
+      .erased-link:hover {
+        opacity: 1; /* Make it fully visible when hovered */
+      }
+
+      .login-title span {
+        font-weight: bold;
+      }
+
+      .register-container::after {
+        content: "";
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 47px;
+        background: url("pics/circle\ .png") no-repeat center center;
+        background-size: cover;
+        z-index: 1;
+      }
+
+      .image-container {
+        position: relative;
+        width: 100%; /* Ensure this is set according to your layout needs */
+        height: 100%; /* Ensure this is set according to your layout needs */
+      }
+
+      .top-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+        width: 70px; /* Adjust width for the size of the top image */
+        z-index: 2; /* Ensure it appears on top */
+      }
+
+      .full-circle img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      .register-form {
+        margin-bottom: 30px;
+        border-radius: 8px;
+      }
+
+      .register-title {
+        font-family: "Ubuntu", sans-serif;
+        color: #004a97;
+        font-size: 28pt;
+        margin: 0;
+        text-align: left;
+        line-height: 0.78;
+        width: 100%;
+      }
+
+      .register-title span {
+        font-weight: bold;
+      }
+
+      .form-subtitle {
+        font-family: "Open Sans", sans-serif;
+        color: #5a5a5a;
+        font-size: 12pt;
+        text-align: left;
+        line-height: 1.5;
+        opacity: 0.8;
+        margin-top: 10px;
+      }
+
+      .form-group {
+        margin-top: 20px;
+        position: relative;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px 40px 10px 60px;
+        border: 1px solid #4dc1e0;
+        border-radius: 4px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 12pt;
+        box-sizing: border-box;
+      }
+
+      .form-group .input-icon-left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        height: 20px;
+      }
+
+      .form-group .divider-left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        color: #4dc1e0;
+      }
+
+      .form-group .input-icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .input-icon-right.eye {
+        right: 35px;
+      }
+
+      .input-icon-right.toggle {
+        right: 10px;
+      }
+
+      .centered-content {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20%;
+        font-family: "Open Sans", sans-serif;
+        padding-top: 20px;
+      }
+
+      .centered-content .login {
+        color: #0494c9;
+        text-decoration: none;
+      }
+
+      .terms {
+        margin-top: 10px;
+        font-size: 10pt;
+        color: #5a5a5a;
+        margin-bottom: 20%;
+      }
+
+      .terms a {
+        color: #004a97;
+        text-decoration: underline;
+      }
+      .login-title {
+        font-size: 2rem; /* Adjust the font size as needed */
+        text-align: left; /* Center the text */
+        margin: 2%; /* Adjust the margin as needed */
+      }
+      .italic-text {
+        font-style: italic;
+      }
+
+      .login-title span {
+        font-weight: bold; /* Make MedMark bold */
+        color: #004a97; /* Change the color as needed */
+        padding-top: 50px; /* Adjust the padding as needed */
+      }
+      .styled-input {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 300; /* Light weight */
+        font-size: 14pt;
+        font-style: italic;
+        color: rgba(0, 74, 151, 0.5); /* rgb #004A97 with 50% opacity */
+        border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+        padding: 0; /* No padding */
+        text-align: left; /* Left alignment */
+        /* text-transform: capitalize; */
+        width: 100%; /* Optional: Make the input take the full width of its container */
+        box-sizing: border-box; /* Optional: Ensure padding and border are included in the element's total width and height */
+      }
+
+      .styled-input::placeholder {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: bold; /* Light weight */
+        font-size: 14pt;
+        font-style: italic;
+        color: rgba(
+          0,
+          74,
+          151,
+          0.5
+        ); /* Ensure the placeholder text also has the same styling */
+        text-transform: capitalize; /* Title case for the placeholder */
+      }
+      .centered-text {
+        margin-top: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="pics/logo.svg" alt="Company Logo" class="logo" />
+    <div class="register-container">
+      <form class="register-form" onsubmit="return validateForm()">
+        <h1 class="login-title"><span class="italic-text">Welcome to</span></h1>
+        <div class="separator"></div>
+        <h1 class="login-title"><span>MedMark</span></h1>
+        <p class="form-subtitle">Fill in the details to create your account</p>
+
+        <div class="form-group">
+          <img src="pics/email.svg" alt="Email Icon" class="input-icon-left" />
+          <span class="divider-left">|</span>
+          <input
+            type="email"
+            placeholder="Email"
+            class="styled-input"
+            id="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-user-tag.svg"
+            alt="Membership Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            type="text"
+            placeholder="Name"
+            class="styled-input"
+            id="name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-archive-book.svg"
+            alt="Policy Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="Policy Number" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-briefcase.svg"
+            alt="Insurer Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="Insurer" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-archive-book.svg"
+            alt="Other Membership Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            type="text"
+            placeholder="Other Membership or Policy Numbers"
+            class="styled-input"
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-mobile.svg"
+            alt="Phone Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="+20 xxxxxx" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/flag.svg"
+            alt="Nationality Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="Nationality" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-card.svg"
+            alt="Passport Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="Passport" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-card.svg"
+            alt="National ID Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            type="text"
+            placeholder="National ID"
+            class="styled-input"
+            id="national-id"
+          />
+          <img
+            src="pics/document-upload-bold.svg"
+            alt="Upload Icon"
+            class="input-icon-right"
+            id="upload-icon"
+          />
+          <input type="file" id="file-upload" style="display: none" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/time zone.svg"
+            alt="Time Zone Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input type="text" placeholder="Time Zone" class="styled-input" />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-calendar.svg"
+            alt="Date of Birth Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            placeholder="Date of Birth"
+            class="styled-input"
+            type="text"
+            onfocus="(this.type = 'date')"
+            id="date"
+          />
+          <img
+            src="pics/calendar-edit-bold.svg"
+            alt="Calendar Icon"
+            class="input-icon-right"
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/locksvg.svg"
+            alt="Password Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            type="password"
+            placeholder="Password"
+            class="styled-input"
+            id="password"
+            class="input-password"
+            required
+          />
+          <img
+            src="pics/eye-bold.svg"
+            alt="Eye Icon"
+            class="input-icon-right toggle"
+            onclick="togglePasswordVisibility('password', this)"
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/locksvg.svg"
+            alt="Confirm Password Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            class="styled-input"
+            id="confirm-password"
+            class="input-password"
+            required
+          />
+          <img
+            src="pics/eye-bold.svg"
+            alt="Eye Icon"
+            class="input-icon-right toggle"
+            onclick="togglePasswordVisibility('confirm-password', this)"
+          />
+        </div>
+        <button type="submit" style="display: none"></button>
+      </form>
+      <div class="image-container">
+        <img src="pics/top.svg" alt="Top Image" class="top-image" />
+      </div>
+    </div>
+    <div class="centered-text">
+      <p>
+        <span class="bold-grey">Don't have an account?</span>
+        <a href="#" class="signup">Sign up here</a>
+      </p>
+      <a href="#" class="erased-link">By clicking below you agree to our</a>
+    </div>
+    <div class="terms">
+      <a href="#" class="erased-link">Terms and Conditions</a>
+    </div>
+
+    <script>
+      function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        let isValid = true;
+        let errorMessage = "";
+
+        if (/\d/.test(name)) {
+          errorMessage += "Name cannot contain numbers.\n";
+          isValid = false;
+        }
+
+        if (!email.includes("@") || !email.endsWith(".com")) {
+          errorMessage += "Please enter a valid email address.\n";
+          isValid = false;
+        }
+
+        const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        if (!passwordPattern.test(password)) {
+          errorMessage +=
+            "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number.\n";
+          isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+          errorMessage += "Passwords do not match.\n";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          alert(errorMessage);
+        }
+
+        return isValid;
+      }
+
+      function togglePasswordVisibility(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.src = "pics/eye-eye-slash-bold.svg";
+        } else {
+          input.type = "password";
+          icon.src = "pics/eye-bold.svg";
+        }
+      }
+
+      document
+        .getElementById("upload-icon")
+        .addEventListener("click", function () {
+          document.getElementById("file-upload").click();
+        });
+
+      document
+        .getElementById("file-upload")
+        .addEventListener("change", function () {
+          const fileName = this.files[0].name;
+          alert("Selected file: " + fileName);
+        });
+    </script>
+  </body>
+</html>
