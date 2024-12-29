@@ -239,7 +239,7 @@
         font-family: "Ubuntu", sans-serif;
         font-weight: 300; /* Light weight */
         font-size: 14pt;
-        font-style: italic;
+        /* font-style: italic; */
         color: rgba(0, 74, 151, 0.5); /* rgb #004A97 with 50% opacity */
         border: 1px solid #ccc; /* Optional: Add a border for better visibility */
         padding: 0; /* No padding */
@@ -252,9 +252,9 @@
       .styled-input::placeholder,
       .form-group select {
         font-family: "Ubuntu", sans-serif;
-        font-weight: bold; /* Light weight */
+        font-weight: 500; /* Light weight */
         font-size: 14pt;
-        font-style: italic;
+        /* font-style: italic; */
         color: rgba(
           0,
           74,
@@ -277,16 +277,6 @@
         <div class="separator"></div>
         <h1 class="login-title"><span>MedMark</span></h1>
         <p class="form-subtitle">Fill in the details to create your account</p>
-
-        <div class="form-group">
-          <img src="pics/email.svg" alt="Email Icon" class="input-icon-left" />
-          <span class="divider-left">|</span>
-          <select name="test" id="test">
-            <option value="test1">Test 1</option>
-            <option value="test2">Test 2</option>
-            <option value="test3">Test 3</option>
-          </select>
-        </div>
         <div class="form-group">
           <img src="pics/email.svg" alt="Email Icon" class="input-icon-left" />
           <span class="divider-left">|</span>
@@ -320,6 +310,19 @@
             class="input-icon-left"
           />
           <span class="divider-left">|</span>
+          <input
+            type="text"
+            placeholder="Membership Number"
+            class="styled-input"
+          />
+        </div>
+        <div class="form-group">
+          <img
+            src="pics/vuesax-linear-archive-book.svg"
+            alt="Policy Icon"
+            class="input-icon-left"
+          />
+          <span class="divider-left">|</span>
           <input type="text" placeholder="Policy Number" class="styled-input" />
         </div>
         <div class="form-group">
@@ -329,7 +332,12 @@
             class="input-icon-left"
           />
           <span class="divider-left">|</span>
-          <input type="text" placeholder="Insurer" class="styled-input" />
+          <select name="insurer" id="insurer">
+            <option value="" selected>Select Insurer</option>
+            <option value="test1">Test 1</option>
+            <option value="test2">Test 2</option>
+            <option value="test3">Test 3</option>
+          </select>
         </div>
         <div class="form-group">
           <img
@@ -360,37 +368,12 @@
             class="input-icon-left"
           />
           <span class="divider-left">|</span>
-          <input type="text" placeholder="Nationality" class="styled-input" />
-        </div>
-        <div class="form-group">
-          <img
-            src="pics/vuesax-linear-card.svg"
-            alt="Passport Icon"
-            class="input-icon-left"
-          />
-          <span class="divider-left">|</span>
-          <input type="text" placeholder="Passport" class="styled-input" />
-        </div>
-        <div class="form-group">
-          <img
-            src="pics/vuesax-linear-card.svg"
-            alt="National ID Icon"
-            class="input-icon-left"
-          />
-          <span class="divider-left">|</span>
-          <input
-            type="text"
-            placeholder="National ID"
-            class="styled-input"
-            id="national-id"
-          />
-          <img
-            src="pics/document-upload-bold.svg"
-            alt="Upload Icon"
-            class="input-icon-right"
-            id="upload-icon"
-          />
-          <input type="file" id="file-upload" style="display: none" />
+          <select name="nationality" id="nationality">
+            <option value="" selected>Select Nationality</option>
+            <option value="test1">Test 1</option>
+            <option value="test2">Test 2</option>
+            <option value="test3">Test 3</option>
+          </select>
         </div>
         <div class="form-group">
           <img
@@ -399,7 +382,12 @@
             class="input-icon-left"
           />
           <span class="divider-left">|</span>
-          <input type="text" placeholder="Time Zone" class="styled-input" />
+          <select name="time-zone" id="time-zone">
+            <option value="" selected>Select Time Zone</option>
+            <option value="test1">Test 1</option>
+            <option value="test2">Test 2</option>
+            <option value="test3">Test 3</option>
+          </select>
         </div>
         <div class="form-group">
           <img
