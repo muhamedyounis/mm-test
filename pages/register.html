@@ -249,7 +249,8 @@
         box-sizing: border-box; /* Optional: Ensure padding and border are included in the element's total width and height */
       }
 
-      .styled-input::placeholder {
+      .styled-input::placeholder,
+      .form-group select {
         font-family: "Ubuntu", sans-serif;
         font-weight: bold; /* Light weight */
         font-size: 14pt;
@@ -265,39 +266,6 @@
       .centered-text {
         margin-top: 10%;
       }
-
-      /* Styling for input and select fields */
-      .form-group input,
-      .form-group select,
-      .form-group select option {
-        width: 100%;
-        padding: 10px 40px 10px 60px; /* Custom padding to match */
-        border: 1px solid #4dc1e0;
-        border-radius: 4px;
-        font-family: "Open Sans", sans-serif; /* Same font for both */
-        font-size: 12pt; /* Match font size */
-        color: #333; /* Ensure text color is the same */
-        box-sizing: border-box; /* Adjust the box model for consistency */
-        -webkit-appearance: none; /* Removes iOS-specific styling */
-        appearance: none; /* Remove default styling for select */
-      }
-
-      /* Option styling */
-      .form-group select option {
-        font-family: "Open Sans", sans-serif; /* Same font */
-        font-size: 12pt; /* Same font size */
-        color: #333; /* Same text color */
-        background-color: #fff; /* Option background color */
-      }
-
-      /* Additional select specific styling */
-      .form-group select {
-        background-color: #fff;
-        background-image: url("path_to_custom_arrow.svg"); /* Custom arrow */
-        background-repeat: no-repeat;
-        background-position: right 10px center; /* Position the arrow */
-        padding-right: 30px; /* Adjust padding for the custom arrow */
-      }
     </style>
   </head>
   <body>
@@ -312,11 +280,10 @@
         <div class="form-group">
           <img src="pics/email.svg" alt="Email Icon" class="input-icon-left" />
           <span class="divider-left">|</span>
-          <select name="test" id="test">
-            <option value="test1">Test 1</option>
-            <option value="test1">Test 2</option>
-            <option value="test1">Test 3</option>
-            <option value="test1">Test 4</option>
+          <select name="test" id="test" class="styled-input">
+            <option class="styled-input" value="test1">Test 1</option>
+            <option class="styled-input" value="test2">Test 2</option>
+            <option class="styled-input" value="test3">Test 3</option>
           </select>
         </div>
         <div class="form-group">
