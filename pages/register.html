@@ -236,6 +236,8 @@
         padding-top: 50px; /* Adjust the padding as needed */
       }
       .styled-input {
+        -webkit-appearance: none; /* Ensures consistency across devices */
+        appearance: none;
         font-family: "Ubuntu", sans-serif;
         font-weight: 300; /* Light weight */
         font-size: 14pt;
@@ -247,6 +249,13 @@
         /* text-transform: capitalize; */
         width: 100%; /* Optional: Make the input take the full width of its container */
         box-sizing: border-box; /* Optional: Ensure padding and border are included in the element's total width and height */
+      }
+
+      /* Fixing the Date Input for iOS */
+      input[type="date"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: none;
       }
 
       .styled-input::placeholder,
@@ -533,6 +542,11 @@
           const fileName = this.files[0].name;
           alert("Selected file: " + fileName);
         });
+
+      document.getElementById("date").addEventListener("focus", function () {
+        this.type = "date";
+        this.style.paddingRight = "40px"; // Ensure padding stays when focused
+      });
     </script>
   </body>
 </html>
