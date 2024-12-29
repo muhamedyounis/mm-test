@@ -154,8 +154,7 @@
       }
 
       .form-group input,
-      .form-group select,
-      .form-group select option {
+      .form-group select {
         width: 100%;
         padding: 10px 40px 10px 60px;
         border: 1px solid #4dc1e0;
@@ -163,8 +162,6 @@
         font-family: "Open Sans", sans-serif;
         font-size: 12pt;
         box-sizing: border-box;
-        -webkit-appearance: none; /* Only for custom select fields */
-        appearance: none;
       }
 
       .form-group .input-icon-left {
@@ -267,6 +264,39 @@
       }
       .centered-text {
         margin-top: 10%;
+      }
+
+      /* Styling for input and select fields */
+      .form-group input,
+      .form-group select,
+      .form-group select option {
+        width: 100%;
+        padding: 10px 40px 10px 60px; /* Custom padding to match */
+        border: 1px solid #4dc1e0;
+        border-radius: 4px;
+        font-family: "Open Sans", sans-serif; /* Same font for both */
+        font-size: 12pt; /* Match font size */
+        color: #333; /* Ensure text color is the same */
+        box-sizing: border-box; /* Adjust the box model for consistency */
+        -webkit-appearance: none; /* Removes iOS-specific styling */
+        appearance: none; /* Remove default styling for select */
+      }
+
+      /* Option styling */
+      .form-group select option {
+        font-family: "Open Sans", sans-serif; /* Same font */
+        font-size: 12pt; /* Same font size */
+        color: #333; /* Same text color */
+        background-color: #fff; /* Option background color */
+      }
+
+      /* Additional select specific styling */
+      .form-group select {
+        background-color: #fff;
+        background-image: url("path_to_custom_arrow.svg"); /* Custom arrow */
+        background-repeat: no-repeat;
+        background-position: right 10px center; /* Position the arrow */
+        padding-right: 30px; /* Adjust padding for the custom arrow */
       }
     </style>
   </head>
