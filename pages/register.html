@@ -544,16 +544,16 @@
         });
 
       document.getElementById("date").addEventListener("focus", function () {
-        // Change the type to 'date' when focused
         if (this.type !== "date") {
-          this.type = "date";
+          this.type = "date"; // Change to date picker on focus
+          this.placeholder = ""; // Remove placeholder when the field is focused
         }
       });
 
-      // Optional: If you want to reset it back to text type when unfocused (if needed)
       document.getElementById("date").addEventListener("blur", function () {
         if (this.value === "") {
-          this.type = "text"; // If there's no value, revert it to text
+          this.type = "text"; // Change back to text input if the value is empty
+          this.placeholder = "Date of Birth"; // Add placeholder back if no value is entered
         }
       });
     </script>
