@@ -556,14 +556,21 @@
       const dateInput = document.getElementById("date");
 
       dateInput.addEventListener("focus", function () {
-        this.type = "date"; // Change to date picker on focus
-        this.placeholder = ""; // Remove placeholder when focused
+        // Switch to "date" to enable the date picker
+        this.type = "date";
+
+        // Open the date picker modal (iOS Safari will automatically do this)
+        this.click(); // Programmatically trigger the click to open the modal
+
+        // Remove placeholder on focus
+        this.placeholder = "";
       });
 
       dateInput.addEventListener("blur", function () {
+        // Revert back to "text" if no date is selected
         if (this.value === "") {
-          this.type = "text"; // Revert to text if no date is selected
-          this.placeholder = "Date of Birth"; // Restore placeholder
+          this.type = "text";
+          this.placeholder = "Date of Birth"; // Restore the placeholder
         }
       });
     </script>
