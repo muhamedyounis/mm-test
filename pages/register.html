@@ -546,14 +546,14 @@
       document.getElementById("date").addEventListener("focus", function () {
         if (this.type !== "date") {
           this.type = "date"; // Change to date picker on focus
-          this.placeholder = ""; // Remove placeholder when the field is focused
+          this.placeholder = ""; // Remove placeholder when focused (native date picker appears)
         }
       });
 
       document.getElementById("date").addEventListener("blur", function () {
         if (this.value === "") {
-          this.type = "text"; // Change back to text input if the value is empty
-          this.placeholder = "Date of Birth"; // Add placeholder back if no value is entered
+          this.type = "text"; // Change back to text input if no value
+          this.placeholder = "Date of Birth"; // Add placeholder back if empty
         }
       });
     </script>
