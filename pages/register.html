@@ -240,12 +240,9 @@
         font-family: "Ubuntu", sans-serif;
         font-weight: 300; /* Light weight */
         font-size: 14pt;
-        /* font-style: italic; */
         color: rgba(0, 74, 151, 0.5); /* rgb #004A97 with 50% opacity */
         border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-        padding: 0; /* No padding */
         text-align: left; /* Left alignment */
-        /* text-transform: capitalize; */
         width: 100%; /* Optional: Make the input take the full width of its container */
         box-sizing: border-box; /* Optional: Ensure padding and border are included in the element's total width and height */
       }
@@ -258,9 +255,13 @@
         font-size: 14pt;
         font-family: "Ubuntu", sans-serif;
         width: 100%; /* Ensure it takes full width */
-        padding: 10px; /* Add padding to match other inputs */
         border: 1px solid #4dc1e0; /* Match border styles */
         border-radius: 4px; /* Match rounded corners */
+        /* Solution 1 */
+        display: block;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        min-height: 1.2em;
       }
 
       .styled-input::placeholder,
@@ -268,7 +269,6 @@
         font-family: "Ubuntu", sans-serif;
         font-weight: 500; /* Light weight */
         font-size: 14pt;
-        /* font-style: italic; */
         color: rgba(
           0,
           74,
