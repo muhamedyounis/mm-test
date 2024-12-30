@@ -413,7 +413,7 @@
           <input
             placeholder="Date of Birth"
             class="styled-input"
-            type="text"
+            type="date"
             id="date"
           />
           <img
@@ -534,19 +534,6 @@
           icon.src = "pics/eye-bold.svg";
         }
       }
-
-      document.getElementById("date").addEventListener("focus", function () {
-        if (this.type !== "date") {
-          this.type = "date"; // Change to date picker on focus
-        }
-      });
-
-      document.getElementById("date").addEventListener("blur", function () {
-        if (this.value === "") {
-          this.type = "text"; // Change back to text input if no value
-          this.placeholder = "Date of Birth"; // Add placeholder back if empty
-        }
-      });
     </script>
   </body>
 </html>
