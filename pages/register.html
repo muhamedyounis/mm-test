@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css"
+    />
     <title>Register Page</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&family=Open+Sans:wght@400&display=swap");
@@ -414,8 +418,7 @@
             placeholder="Date of Birth"
             class="styled-input"
             type="text"
-            id="date"
-            onfocus="(this.type = 'date')"
+            id="datepicker"
           />
           <img
             src="pics/calendar-edit-bold.svg"
@@ -484,7 +487,8 @@
     <div class="terms">
       <a href="#" class="erased-link">Terms and Conditions</a>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script>
       function validateForm() {
         const name = document.getElementById("name").value;
@@ -535,26 +539,8 @@
           icon.src = "pics/eye-bold.svg";
         }
       }
-
-      const dateInput = document.getElementById("date");
-
-      dateInput.addEventListener("focus", function () {
-        // Switch to "date" to enable the date picker
-        this.type = "date";
-
-        // Open the date picker modal (iOS Safari will automatically do this)
-        this.click(); // Programmatically trigger the click to open the modal
-
-        // Remove placeholder on focus
-        this.placeholder = "";
-      });
-
-      dateInput.addEventListener("blur", function () {
-        // Revert back to "text" if no date is selected
-        if (this.value === "") {
-          this.type = "text";
-          this.placeholder = "Date of Birth"; // Restore the placeholder
-        }
+      $(function () {
+        $("#datepicker").datepicker();
       });
     </script>
   </body>
