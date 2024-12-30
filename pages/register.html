@@ -250,11 +250,17 @@
         box-sizing: border-box; /* Optional: Ensure padding and border are included in the element's total width and height */
       }
 
-      /* Fixing the Date Input for iOS */
       input[type="date"] {
         -webkit-appearance: none;
         appearance: none;
-        background: none;
+        border: none;
+        background: transparent;
+        font-size: 14pt;
+        font-family: "Ubuntu", sans-serif;
+        width: 100%; /* Ensure it takes full width */
+        padding: 10px; /* Add padding to match other inputs */
+        border: 1px solid #4dc1e0; /* Match border styles */
+        border-radius: 4px; /* Match rounded corners */
       }
 
       .styled-input::placeholder,
