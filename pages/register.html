@@ -281,6 +281,23 @@
       .centered-text {
         margin-top: 10%;
       }
+      input[type="date"],
+      input[type="text"] {
+        -webkit-appearance: none; /* Disable native styling for consistency */
+        appearance: none;
+        width: 100%; /* Make it take the full width */
+        padding: 10px; /* Add padding for proper spacing */
+        font-size: 14pt; /* Ensure text size matches */
+        border: 1px solid #4dc1e0; /* Match border styles */
+        border-radius: 4px; /* Match rounded corners */
+        box-sizing: border-box; /* Include padding and border in size calculation */
+      }
+
+      input[type="date"]:focus,
+      input[type="text"]:focus {
+        outline: none; /* Remove default focus outline */
+        border-color: #0494c9; /* Add focus border color */
+      }
     </style>
   </head>
   <body>
@@ -413,8 +430,9 @@
           <input
             placeholder="Date of Birth"
             class="styled-input"
-            type="date"
+            type="text"
             id="date"
+            onfocus="(this.type = 'date')"
           />
           <img
             src="pics/calendar-edit-bold.svg"
@@ -534,6 +552,20 @@
           icon.src = "pics/eye-bold.svg";
         }
       }
+
+      const dateInput = document.getElementById("date");
+
+      dateInput.addEventListener("focus", function () {
+        this.type = "date"; // Change to date picker on focus
+        this.placeholder = ""; // Remove placeholder when focused
+      });
+
+      dateInput.addEventListener("blur", function () {
+        if (this.value === "") {
+          this.type = "text"; // Revert to text if no date is selected
+          this.placeholder = "Date of Birth"; // Restore placeholder
+        }
+      });
     </script>
   </body>
 </html>
